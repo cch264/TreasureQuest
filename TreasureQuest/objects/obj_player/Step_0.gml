@@ -174,6 +174,7 @@ if( keyboard_check(vk_down) && !slow_down_player && finished_rolling )
 	{
 	  current_player_speed += player_speed_multiply;	
 	}
+	
 	image_speed = 1;
 }
 
