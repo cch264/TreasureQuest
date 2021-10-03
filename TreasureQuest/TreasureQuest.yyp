@@ -2,8 +2,10 @@
   "resources": [
     {"id":{"name":"spr_player_left","path":"sprites/spr_player_left/spr_player_left.yy",},"order":8,},
     {"id":{"name":"spr_cactus_punch_left","path":"sprites/spr_cactus_punch_left/spr_cactus_punch_left.yy",},"order":5,},
+    {"id":{"name":"player_movement","path":"scripts/player_movement/player_movement.yy",},"order":0,},
     {"id":{"name":"spr_player_reverse","path":"sprites/spr_player_reverse/spr_player_reverse.yy",},"order":7,},
     {"id":{"name":"spr_cactus_punch_right","path":"sprites/spr_cactus_punch_right/spr_cactus_punch_right.yy",},"order":4,},
+    {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},"order":0,},
     {"id":{"name":"player","path":"sprites/player/player.yy",},"order":0,},
     {"id":{"name":"treasure","path":"sprites/treasure/treasure.yy",},"order":1,},
     {"id":{"name":"spr_player_forward","path":"sprites/spr_player_forward/spr_player_forward.yy",},"order":6,},
