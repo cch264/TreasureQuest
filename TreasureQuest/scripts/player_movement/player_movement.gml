@@ -28,3 +28,42 @@ function startingToRoll( image_index )
 	  return false;	
 	}
 }
+
+// Check left right room boundy collision
+function checkRightBoundry(playerXPos, room_width)
+{
+	if( playerXPos + 50 >= room_width)
+	{
+		return true;
+	}
+	return false;
+}
+
+// Check left right room boundy collision
+function checkLeftBoundry(playerXPos, room_width)
+{
+
+	if( playerXPos - 2 <= 0)
+	{
+		return true;
+	}
+	return false;
+}
+
+// Check top bottom room boundry collision
+function checkTopBoundry(playerYPos, room_height)
+{
+    if( playerYPos + 3 <= 0)
+	{
+		return true;
+	}
+	return false;
+}
+function checkBottomBoundry(playerYPos, room_height)
+{
+	if( playerYPos + 48 >= room_height)
+	{
+		return true;
+	}
+	return false;
+}
