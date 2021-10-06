@@ -1,14 +1,20 @@
 {
   "resources": [
+    {"id":{"name":"rm_lose","path":"rooms/rm_lose/rm_lose.yy",},"order":2,},
+    {"id":{"name":"rm_win","path":"rooms/rm_win/rm_win.yy",},"order":3,},
     {"id":{"name":"spr_player_left","path":"sprites/spr_player_left/spr_player_left.yy",},"order":8,},
     {"id":{"name":"spr_temp_floor","path":"sprites/spr_temp_floor/spr_temp_floor.yy",},"order":12,},
     {"id":{"name":"spr_cactus_punch_left","path":"sprites/spr_cactus_punch_left/spr_cactus_punch_left.yy",},"order":5,},
+    {"id":{"name":"rm_start_screen","path":"rooms/rm_start_screen/rm_start_screen.yy",},"order":4,},
     {"id":{"name":"player_movement","path":"scripts/player_movement/player_movement.yy",},"order":0,},
     {"id":{"name":"spr_player_reverse","path":"sprites/spr_player_reverse/spr_player_reverse.yy",},"order":7,},
     {"id":{"name":"obj_enemy_cactus","path":"objects/obj_enemy_cactus/obj_enemy_cactus.yy",},"order":3,},
+    {"id":{"name":"fnt_game","path":"fonts/fnt_game/fnt_game.yy",},"order":0,},
     {"id":{"name":"obj_treasure_ruby","path":"objects/obj_treasure_ruby/obj_treasure_ruby.yy",},"order":1,},
     {"id":{"name":"spr_treasure_ruby","path":"sprites/spr_treasure_ruby/spr_treasure_ruby.yy",},"order":10,},
     {"id":{"name":"spr_cactus_punch_right","path":"sprites/spr_cactus_punch_right/spr_cactus_punch_right.yy",},"order":4,},
+    {"id":{"name":"obj_game_controller","path":"objects/obj_game_controller/obj_game_controller.yy",},"order":4,},
+    {"id":{"name":"rm_instructions","path":"rooms/rm_instructions/rm_instructions.yy",},"order":1,},
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},"order":0,},
     {"id":{"name":"spr_treasure_potion","path":"sprites/spr_treasure_potion/spr_treasure_potion.yy",},"order":11,},
     {"id":{"name":"treasure","path":"sprites/treasure/treasure.yy",},"order":1,},
@@ -31,6 +37,10 @@
   },
   "RoomOrderNodes": [
     {"roomId":{"name":"rm_game","path":"rooms/rm_game/rm_game.yy",},},
+    {"roomId":{"name":"rm_instructions","path":"rooms/rm_instructions/rm_instructions.yy",},},
+    {"roomId":{"name":"rm_lose","path":"rooms/rm_lose/rm_lose.yy",},},
+    {"roomId":{"name":"rm_win","path":"rooms/rm_win/rm_win.yy",},},
+    {"roomId":{"name":"rm_start_screen","path":"rooms/rm_start_screen/rm_start_screen.yy",},},
   ],
   "Folders": [
     {"folderPath":"folders/Sprites.yy","order":1,"resourceVersion":"1.0","name":"Sprites","tags":[],"resourceType":"GMFolder",},
