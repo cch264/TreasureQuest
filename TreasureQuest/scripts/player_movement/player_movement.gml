@@ -32,7 +32,7 @@ function startingToRoll( image_index )
 // Check left right room boundy collision
 function checkRightBoundry(playerXPos, room_width)
 {
-	if( playerXPos + 60 >= room_width)
+	if( playerXPos + 50 >= room_width)
 	{
 		return true;
 	}
@@ -43,7 +43,7 @@ function checkRightBoundry(playerXPos, room_width)
 function checkLeftBoundry(playerXPos, room_width)
 {
 
-	if( playerXPos - 3 <= 0)
+	if( playerXPos - 2 <= 0)
 	{
 		return true;
 	}
@@ -53,7 +53,7 @@ function checkLeftBoundry(playerXPos, room_width)
 // Check top bottom room boundry collision
 function checkTopBoundry(playerYPos, room_height)
 {
-    if( playerYPos - 3 <= 0)
+    if( playerYPos + 3 <= 0)
 	{
 		return true;
 	}
@@ -61,7 +61,7 @@ function checkTopBoundry(playerYPos, room_height)
 }
 function checkBottomBoundry(playerYPos, room_height)
 {
-	if( playerYPos + 40 >= room_height)
+	if( playerYPos + 48 >= room_height)
 	{
 		return true;
 	}
