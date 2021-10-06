@@ -47,3 +47,13 @@ slow_down_player = false;
 // False means the player is moving down and needs to be slowed down
 // True means the player is moving up and needs slowed down.
 slow_down_direc_up = false;
+
+
+/////// Enemy Collisions ////////
+collided_with_enemy = false;
+knock_back_distance = 200;
+knock_back_speed = 6;
+distance_knocked_back = 0;
+knock_back_cool_down = 0;
+
+collision_direction = "left";

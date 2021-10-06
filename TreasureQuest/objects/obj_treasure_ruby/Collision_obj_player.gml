@@ -5,6 +5,6 @@ instance_destroy();
 
 with(obj_game_controller)
 {
-  objects_collected += 1;	
+  items_collected += 1;	
   lives += 1;
 }
