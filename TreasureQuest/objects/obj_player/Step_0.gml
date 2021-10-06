@@ -29,19 +29,27 @@ if( !finished_rolling )
 	if( rolling_left )
 	{
 		// keep moving the player if they have not moved more than needed to complete one "Roll"
+		// Stop rolling if player is colliding with left or right room boundries
 		if( !roll_stop )
 		{
 			if( begin_roll )
 			{
 				image_speed = .8;
-				x -= begin_roll_speed;
+				if( !checkLeftBoundry(x, room_width) )
+				{
+					x -= begin_roll_speed;
+				}
 				begin_roll_speed += begin_roll_multiply;
 				show_debug_message( "BEGIN ROLL ");
 			}
 			else
 			{
 				image_speed = 1;
-				x -= finish_roll_speed;
+				
+				if(  !checkLeftBoundry(x, room_width) )
+				{
+					x -= finish_roll_speed;
+				}
 				finish_roll_speed += finish_roll_multiply;
 				show_debug_message( "FINISH ROLL ");
 			}
@@ -69,14 +77,20 @@ if( !finished_rolling )
 			if( begin_roll )
 			{
 				image_speed = .8;
-				x += begin_roll_speed;
+				if( !checkRightBoundry(x, room_width) )
+				{
+					x += begin_roll_speed;
+				}
 				begin_roll_speed += begin_roll_multiply;
 				show_debug_message( "BEGIN ROLL ");
 			}
 			else
 			{
 				image_speed = 1;
-				x += finish_roll_speed;
+				if( !checkRightBoundry(x, room_width) )
+				{
+					x += finish_roll_speed;
+				}
 				finish_roll_speed += finish_roll_multiply;
 				show_debug_message( "FINISH ROLL ");
 			}
@@ -100,7 +114,8 @@ if( !finished_rolling )
 
 if( slow_down_player )
 {
-	if( current_player_speed > 0 )
+	// If the players speed is above 0 and the player is not colliding with the top and bottom of the room.
+	if( current_player_speed > 0 && !checkTopBoundry(y, room_height) && !checkBottomBoundry(y, room_height))
 	{
 		// If player is moving upward, subtract from the object y coords.
 		if( slow_down_direc_up )
@@ -154,25 +169,33 @@ if( keyboard_check( vk_up ) && !slow_down_player && finished_rolling )
 {
 	
 	sprite_index = spr_player_reverse;
-	y -= current_player_speed;
 	
-	if( current_player_speed < 6 )
+	if(!checkTopBoundry(y, room_height))
 	{
-	  current_player_speed += player_speed_multiply;	
+		y -= current_player_speed;
+	
+		if( current_player_speed < 6 )
+		{
+		  current_player_speed += player_speed_multiply;	
+		}
 	}
 	
 	image_speed = 1;
 }
 
 // Only allow player to move down if we arent currently slowing down.
-if( keyboard_check(vk_down) && !slow_down_player && finished_rolling )
+if( keyboard_check(vk_down) && !slow_down_player && finished_rolling ) 
 {
 	sprite_index = spr_player_forward;
-	y += current_player_speed;
-	
-	if( current_player_speed < 6 )
+	if(!checkBottomBoundry(y, room_height))
 	{
-	  current_player_speed += player_speed_multiply;	
+		
+		y += current_player_speed;
+	
+		if( current_player_speed < 6 )
+		{
+		  current_player_speed += player_speed_multiply;	
+		}
 	}
 	
 	image_speed = 1;
@@ -184,6 +207,8 @@ if( keyboard_check( vk_nokey ) && !slow_down_player && finished_rolling )
 {
 	image_speed=0;
 }
+
+
 
 
 	
