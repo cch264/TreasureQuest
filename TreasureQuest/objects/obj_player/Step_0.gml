@@ -204,6 +204,14 @@ if( !collided_with_enemy )
 }
 else
 {
+	if( collided_with_enemy && draw_player_hit_sprite)
+	{
+		draw_player_hit_sprite = false;	
+   
+		instance_create_layer( 0, 0, "Instances", obj_player_hit_anim);
+		obj_player_hit_anim.depth = -100;
+	}
+	
 	switch(collision_direction)
 	{
 		case "up":

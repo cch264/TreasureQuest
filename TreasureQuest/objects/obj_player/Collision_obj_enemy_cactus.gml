@@ -37,6 +37,11 @@ if( !collided_with_enemy && knock_back_cool_down == 0)
 		knock_back_cool_down = 4;
 		
 		alarm[1] = knock_back_cool_down * room_speed;
+		
+		with( obj_shake )
+		{
+			shake = true;
+		}
 }
 else
 {

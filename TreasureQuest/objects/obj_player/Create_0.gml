@@ -56,4 +56,7 @@ knock_back_speed = 6;
 distance_knocked_back = 0;
 knock_back_cool_down = 0;
 
+draw_player_hit_sprite = true;
+
+
 collision_direction = "";
