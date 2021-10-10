@@ -6,7 +6,7 @@ if( items_collected == 3 )
 	room_goto(rm_win);
 }
 
-if( keyboard_check(vk_enter) )
+if( keyboard_check(vk_enter) && room != rm_game )
 {
 	room_goto(rm_game);
 }
