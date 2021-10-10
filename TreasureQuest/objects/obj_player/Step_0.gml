@@ -36,23 +36,23 @@ if( !collided_with_enemy )
 				if( begin_roll )
 				{
 					image_speed = .8;
-					if( !checkLeftBoundry(x, room_width) )
+					if( !checkForStoppingCollision( x, y, room_width, room_height, "left_boundry" ) )
 					{
 						x -= begin_roll_speed;
 					}
 					begin_roll_speed += begin_roll_multiply;
-					show_debug_message( "BEGIN ROLL ");
+					
 				}
 				else
 				{
 					image_speed = 1;
 				
-					if(  !checkLeftBoundry(x, room_width) )
+					if(  !checkForStoppingCollision( x, y, room_width, room_height, "left_boundry" ) )
 					{
 						x -= finish_roll_speed;
 					}
 					finish_roll_speed += finish_roll_multiply;
-					show_debug_message( "FINISH ROLL ");
+				
 				}
 		
 			}
@@ -60,7 +60,7 @@ if( !collided_with_enemy )
 			{
 				if( !keyboard_check( vk_left ) )
 				{
-					show_debug_message( "STOPPING ROLL, IMAGE INDEX: " + string( image_index ) );
+				
 					finished_rolling = true;
 					slow_left_right_roll = true;
 					begin_roll_speed = init_begin_roll_speed;
@@ -78,22 +78,22 @@ if( !collided_with_enemy )
 				if( begin_roll )
 				{
 					image_speed = .8;
-					if( !checkRightBoundry(x, room_width) )
+					if( !checkForStoppingCollision( x, y, room_width, room_height, "right_boundry") )
 					{
 						x += begin_roll_speed;
 					}
 					begin_roll_speed += begin_roll_multiply;
-					show_debug_message( "BEGIN ROLL ");
+				
 				}
 				else
 				{
 					image_speed = 1;
-					if( !checkRightBoundry(x, room_width) )
+					if( !checkForStoppingCollision( x, y, room_width, room_height, "right_boundry" ) )
 					{
 						x += finish_roll_speed;
 					}
 					finish_roll_speed += finish_roll_multiply;
-					show_debug_message( "FINISH ROLL ");
+					
 				}
 		
 			}
@@ -101,7 +101,7 @@ if( !collided_with_enemy )
 			{
 				if( !keyboard_check( vk_right ) )
 				{
-					show_debug_message( "STOPPING ROLL, IMAGE INDEX: " + string( image_index ) );
+				
 					finished_rolling = true;
 					slow_left_right_roll = true;
 					begin_roll_speed = init_begin_roll_speed;
@@ -115,8 +115,8 @@ if( !collided_with_enemy )
 
 	if( slow_down_player )
 	{
-		// If the players speed is above 0 and the player is not colliding with the top and bottom of the room.
-		if( current_player_speed > 0 && !checkTopBoundry(y, room_height) && !checkBottomBoundry(y, room_height))
+		// If the players speed is above 0 and the player is not going to collide with the top or bottom of the room.
+		if( current_player_speed > 0 && !checkForStoppingCollision(  x, y, room_width, room_height, "top_boundry" ) && !checkForStoppingCollision( x, y, room_width, room_height, "bottom_boundry" ))
 		{
 			// If player is moving upward, subtract from the object y coords.
 			if( slow_down_direc_up )
@@ -171,7 +171,7 @@ if( !collided_with_enemy )
 	
 		sprite_index = spr_player_reverse;
 	
-		if(!checkTopBoundry(y, room_height))
+		if( !checkForStoppingCollision( x, y, room_width, room_height, "top_boundry" ) ) 
 		{
 			y -= current_player_speed;
 	
@@ -188,7 +188,7 @@ if( !collided_with_enemy )
 	if( keyboard_check(vk_down) && !slow_down_player && finished_rolling ) 
 	{
 		sprite_index = spr_player_forward;
-		if(!checkBottomBoundry(y, room_height))
+		if( !checkForStoppingCollision(  x, y, room_width, room_height, "bottom_boundry" ) )
 		{
 		
 			y += current_player_speed;
@@ -207,7 +207,7 @@ else
 	switch(collision_direction)
 	{
 		case "up":
-			if( !checkTopBoundry(y, room_height) )
+			if( !checkForStoppingCollision(  x, y, room_width, room_height, "top_boundry" ) )
 			{
 				y -= knock_back_speed;
 				distance_knocked_back += knock_back_speed;
@@ -219,7 +219,7 @@ else
 		break;
 		
 		case "down":
-			if( !checkBottomBoundry(y, room_height) )
+			if( !checkForStoppingCollision(  x, y, room_width, room_height, "bottom_boundry" ) )
 			{
 				y += knock_back_speed;
 				distance_knocked_back += knock_back_speed;
@@ -232,7 +232,7 @@ else
 		break;
 		
 		case "left":
-			if( !checkLeftBoundry(x, room_height) )
+			if(!checkForStoppingCollision(  x, y, room_width, room_height, "left_boundry" ) )
 			{
 				x -= knock_back_speed;
 				distance_knocked_back += knock_back_speed;
@@ -244,9 +244,9 @@ else
 		break;
 		
 		case "right":
-			if( !checkRightBoundry(x, room_height) )
+			if( !checkForStoppingCollision(  x, y, room_width, room_height, "right_boundry" ) )
 			{
-				x -= knock_back_speed;
+				x += knock_back_speed;
 				distance_knocked_back += knock_back_speed;
 			}
 			else
@@ -261,6 +261,17 @@ else
 		
 		collided_with_enemy = false;
 		distance_knocked_back = 0;
+		
+		// Reset all variables that are used while player is moving since the player was hit they need to not move once they are finished being knocked back.
+		finished_rolling = true;
+		slow_left_right_roll = true;
+		begin_roll_speed = init_begin_roll_speed;
+		finish_roll_speed = init_finish_roll_speed;
+		
+		current_player_speed = init_player_speed
+		slow_down_player = false;
+			
+		image_speed = 0;
 	}
 }
 

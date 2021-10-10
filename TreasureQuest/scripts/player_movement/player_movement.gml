@@ -29,41 +29,66 @@ function startingToRoll( image_index )
 	}
 }
 
-// Check left right room boundy collision
+// Check right room boundry collision
 function checkRightBoundry(playerXPos, room_width)
 {
-	if( playerXPos + 50 >= room_width)
+	if( playerXPos + rightOffset >= room_width )
 	{
 		return true;
 	}
 	return false;
 }
 
-// Check left right room boundy collision
+// Check left room boundry collision
 function checkLeftBoundry(playerXPos, room_width)
 {
 
-	if( playerXPos - 2 <= 0)
+	if( playerXPos - leftOffset <= 0)
 	{
 		return true;
 	}
 	return false;
 }
 
-// Check top bottom room boundry collision
+// Check top room boundry collision
 function checkTopBoundry(playerYPos, room_height)
 {
-    if( playerYPos + 3 <= 0)
+    if( playerYPos - topOffset <= 0 )
 	{
 		return true;
 	}
 	return false;
 }
+
+// Check bottom room boundry collision
 function checkBottomBoundry(playerYPos, room_height)
 {
-	if( playerYPos + 48 >= room_height)
+	if( playerYPos + bottomOffset >= room_height )
 	{
 		return true;
 	}
 	return false;
+}
+
+function checkForStoppingCollision( playerXPos, playerYPos, room_width, room_height, collision_to_check )
+{
+	switch( collision_to_check )
+	{
+		case "top_boundry":
+		// checkFooBoundry checks the players position against the room boudnries, place meeting checks the player and invisible barriers collision masks!.
+		  return checkTopBoundry(playerYPos, room_height) || place_meeting( playerXPos, playerYPos - 3, obj_invisible_barrier );
+		break;
+		
+		case "bottom_boundry":
+		  return checkBottomBoundry(playerYPos, room_height) || place_meeting( playerXPos, playerYPos + 5, obj_invisible_barrier  );
+		break;
+		
+		case "right_boundry":
+		  return checkRightBoundry( playerXPos, room_width ) || place_meeting( playerXPos + 5, playerYPos, obj_invisible_barrier  );
+		break;
+		
+		case "left_boundry":
+		  return checkLeftBoundry( playerXPos, room_width ) || place_meeting( playerXPos - 5, playerYPos, obj_invisible_barrier  );
+		break;
+	}
 }
