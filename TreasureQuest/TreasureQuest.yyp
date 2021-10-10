@@ -21,6 +21,7 @@
     {"id":{"name":"obj_bird","path":"objects/obj_bird/obj_bird.yy",},"order":6,},
     {"id":{"name":"obj_shake","path":"objects/obj_shake/obj_shake.yy",},"order":11,},
     {"id":{"name":"spr_player_reverse","path":"sprites/spr_player_reverse/spr_player_reverse.yy",},"order":5,},
+    {"id":{"name":"seq_player_intro","path":"sequences/seq_player_intro/seq_player_intro.yy",},"order":0,},
     {"id":{"name":"spr_treasure_potion_mini","path":"sprites/spr_treasure_potion_mini/spr_treasure_potion_mini.yy",},"order":19,},
     {"id":{"name":"obj_enemy_cactus","path":"objects/obj_enemy_cactus/obj_enemy_cactus.yy",},"order":3,},
     {"id":{"name":"fnt_game","path":"fonts/fnt_game/fnt_game.yy",},"order":0,},
