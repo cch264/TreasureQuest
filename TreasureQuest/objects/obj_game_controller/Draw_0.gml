@@ -13,8 +13,7 @@ case rm_game:
 	draw_set_halign(fa_left);
 
     break;
-	
-	
+
 case rm_instructions:
     var c = c_yellow;
 	draw_text_transformed_colour(room_width / 2, 100, "Treasure Quest", 3, 3, 0, c, c, c, c, 1);
@@ -36,11 +35,14 @@ treasure will give you an extra life!
 	
 
 case rm_lose:
-    
-   
+    var c = c_red;
+	draw_text_transformed_colour(room_width / 4, 100, "Press Enter to Restart", 3, 3, 0, c, c, c, c, 1);
+   draw_set_halign(fa_center);
     break;
 case rm_win:
-    
-	
+    var c = c_red;
+	draw_text_transformed_colour(room_width / 4, 100, "Press Enter to Restart", 3, 3, 0, c, c, c, c, 1);
+   
+	draw_set_halign(fa_center);
     break;
 }

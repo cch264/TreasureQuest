@@ -2,13 +2,17 @@
 // You can write your code in this editor
 
 // move bird in circular motion
-x = (sin(degtorad(dir)) * 40) + x_offset;
-y = (cos(degtorad(dir)) * 40) + y_offset;
-dir += 2;
 
-if (dir > 360)
+if( start_moving )
 {
-    dir = 2;	
-}
+	x = (sin(degtorad(dir)) * 40) + x_offset;
+	y = (cos(degtorad(dir)) * 40) + y_offset;
+	dir += fly_speed;
 
-image_angle += 2;
+	if (dir > 360)
+	{
+	    dir = fly_speed;	
+	}
+
+	image_angle += fly_speed;
+}

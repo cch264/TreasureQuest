@@ -27,3 +27,6 @@ dash_speed = 1.5;
 return_dash = false;
 
 actually_dash = false;
+
+start_moving = false;
+alarm[0] = random_range(1,5)*room_speed;
