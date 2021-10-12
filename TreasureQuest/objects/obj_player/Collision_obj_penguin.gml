@@ -2,6 +2,10 @@
 // You can write your code in this editor
 if( !collided_with_enemy && knock_back_cool_down == 0)
 {
+	with( obj_game_controller )
+	{
+	 lives -= 1;
+	}
 	var collision_direction;
 	
 	   // If the enemy is to the right of the player move player left
