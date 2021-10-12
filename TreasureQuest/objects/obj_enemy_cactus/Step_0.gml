@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-if( !obj_player.collided_with_enemy )
+if( !obj_player.collided_with_enemy && start_moving )
 {
 	if( walkedUpAmount < enemy_walk_distance && !dashing )
 	{

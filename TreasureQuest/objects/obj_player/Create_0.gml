@@ -15,9 +15,9 @@ finished_rolling_distance = 20;
 // Indicates when the sprite reaches frame where it has flipped 180 degrees.
 roll_stop = false;
 
-init_begin_roll_speed = 1.3;
+init_begin_roll_speed = .7;
 
-init_finish_roll_speed = 3;
+init_finish_roll_speed = 2.7;
 
 begin_roll_speed = init_begin_roll_speed;
 

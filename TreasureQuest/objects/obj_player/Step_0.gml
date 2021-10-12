@@ -259,7 +259,7 @@ else
 			}
 			else
 			{
-				distance_knocked_back = knock_back_speed;
+				distance_knocked_back = knock_back_distance;
 			}
 		break;
 	}
@@ -287,6 +287,11 @@ else
 if( keyboard_check( vk_nokey ) && !slow_down_player && finished_rolling )
 {
 	image_speed=0;
+}
+else
+{
+  show_debug_message("Slow down player is: " + string(slow_down_player));	
+  show_debug_message("Fin rolling is: " + string(finished_rolling));
 }
 
 
