@@ -1,6 +1,6 @@
 ## TreasureQuest
 *	Calvin Harper	(cch264)
-*	Trevor Johnson	(ID2)
+*	Trevor Johnson	(tkj44)
 *	Logan ()
 
 ##	Instructions
@@ -14,5 +14,5 @@ When moving parallel close to a wall the player may get snagged, move in the opp
 
 ##	Credits
 *	Calvin Harper:	Created	player, gem, cactus, and item dock sprites. Wrote player movement, enemy collision, screen shake, room boundry collision, item collision and room management code. Created start screen sequence and tween.
-*	Trevor Johnson:	
+*	Trevor Johnson:	Created bird, penguin, and lamp sprites. Wrote movement code for bird and pengiun. General bug fixes.
 *	Logan O'Donell:
