@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "treasure",
-    "path": "sprites/treasure/treasure.yy",
+    "name": "spr_invisible_barrier",
+    "path": "sprites/spr_invisible_barrier/spr_invisible_barrier.yy",
   },
   "solid": false,
   "visible": true,
