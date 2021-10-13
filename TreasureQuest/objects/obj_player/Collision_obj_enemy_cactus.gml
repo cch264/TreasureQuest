@@ -3,11 +3,14 @@
 
 if( !collided_with_enemy && knock_back_cool_down == 0)
 {
+	with( obj_game_controller )
+	{
+	 lives -= 1;
+	}
 	var collision_direction;
 	
 	   // Player coord first
 	   var enemy_direction = point_direction(x, y, other.x, other.y);
-	   show_debug_message("ENEMY DIRECTION RELATIVE TO PLAYER: " + string( enemy_direction ));
 	
 	   // If the enemy is to the right of the player move player left
 	   if( enemy_direction <= 45 && enemy_direction >= 0 || enemy_direction <= 360 && enemy_direction >= 315 )

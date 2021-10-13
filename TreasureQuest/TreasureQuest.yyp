@@ -31,6 +31,7 @@
     {"id":{"name":"TGMS_7_Properties","path":"scripts/TGMS_7_Properties/TGMS_7_Properties.yy",},"order":10,},
     {"id":{"name":"TGMS_4_TweenState","path":"scripts/TGMS_4_TweenState/TGMS_4_TweenState.yy",},"order":7,},
     {"id":{"name":"obj_treasure_ruby","path":"objects/obj_treasure_ruby/obj_treasure_ruby.yy",},"order":1,},
+    {"id":{"name":"obj_title_screen","path":"objects/obj_title_screen/obj_title_screen.yy",},"order":13,},
     {"id":{"name":"TGMS_5_TweenGetSet","path":"scripts/TGMS_5_TweenGetSet/TGMS_5_TweenGetSet.yy",},"order":8,},
     {"id":{"name":"TGMS_2_EaseFunctions","path":"scripts/TGMS_2_EaseFunctions/TGMS_2_EaseFunctions.yy",},"order":5,},
     {"id":{"name":"spr_penguin_right","path":"sprites/spr_penguin_right/spr_penguin_right.yy",},"order":14,},
@@ -66,6 +67,7 @@
     {"id":{"name":"spr_title_screen","path":"sprites/spr_title_screen/spr_title_screen.yy",},"order":26,},
     {"id":{"name":"obj_treasure_potion","path":"objects/obj_treasure_potion/obj_treasure_potion.yy",},"order":2,},
     {"id":{"name":"spr_cactus_still","path":"sprites/spr_cactus_still/spr_cactus_still.yy",},"order":1,},
+    {"id":{"name":"fnt_game_win_lose","path":"fonts/fnt_game_win_lose/fnt_game_win_lose.yy",},"order":1,},
     {"id":{"name":"rm_game","path":"rooms/rm_game/rm_game.yy",},"order":0,},
   ],
   "Options": [
