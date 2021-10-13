@@ -19,7 +19,7 @@ if( keyboard_check(vk_enter) && room == rm_instructions && room != rm_game )
 
 if( keyboard_check(vk_enter) && room == rm_win )
 {
-	room_goto(rm_start_screen);
+	game_restart();
 }
 if( keyboard_check(vk_enter) && room == rm_lose )
 {
