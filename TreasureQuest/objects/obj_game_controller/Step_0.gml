@@ -17,9 +17,13 @@ if( keyboard_check(vk_enter) && room == rm_instructions && room != rm_game )
 	room_goto(rm_game);
 }
 
-if( keyboard_check(vk_enter) && ( room == rm_win || room == rm_lose ) )
+if( keyboard_check(vk_enter) && room == rm_win )
 {
 	room_goto(rm_start_screen);
+}
+if( keyboard_check(vk_enter) && room == rm_lose )
+{
+	 game_restart();
 }
 
 if( mouse_check_button_pressed(mb_left) && room == rm_start_screen )
