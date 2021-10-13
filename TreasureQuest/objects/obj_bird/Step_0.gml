@@ -11,7 +11,7 @@ if( start_moving )
 
 	if (dir > 360)
 	{
-	    dir = fly_speed;	
+		dir = dir - 360;
 	}
 
 	image_angle += fly_speed;

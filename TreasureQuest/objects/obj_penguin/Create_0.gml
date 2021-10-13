@@ -3,7 +3,7 @@
 
 randomise();
 mov_dir = "left";
-mov_speed = random_range(1,3);
+mov_speed = 1;
 distance = 0;
 distance_per_dash = 350;  // distance to travel before switching direction
 start_moving = false;					  // should not be < 150
