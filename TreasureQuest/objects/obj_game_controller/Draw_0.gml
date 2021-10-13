@@ -24,8 +24,9 @@ UP ARROW: move up
 DOWN ARROW: move down
 LEFT/RIGHT ARROWS: change direction
 
-Find all three pieces of treasure to win! 
-Avoid touching the enemies though, you only have
+Find all three pieces of treasure to win!
+There is 1 piece of treasure in each biome. 
+Avoid touching the enemies!You only have
 3 lives to start with! Picking up a piece of 
 treasure will give you an extra life!
 
